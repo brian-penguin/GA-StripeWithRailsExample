@@ -1,0 +1,10 @@
+Rails Stripe, Basic Example
+----------------
+
+Clone and Bundle!
+Then add your Stripe Test Keys to a .env file
+
+start a server and go to /charges/new
+Test info is any valid expiration date and three digit csv number
+The test card is 4242 4242 4242 4242
+
