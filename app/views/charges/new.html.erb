@@ -5,6 +5,10 @@
     </label>
   </article>
 
+  <!--
+  This incorporates and uses stripes checkout js function to add a payment
+  button (It is possible to make your own using their js but this is way nicer)
+   -->
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
