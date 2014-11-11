@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # To keep environment variables safe
-gem 'dotenv'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Add Stripe Gem for creating charges and interacting with Stripe APi
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

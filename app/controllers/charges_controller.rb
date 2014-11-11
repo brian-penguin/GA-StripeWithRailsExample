@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Charge amount is in pennies
+    # Charge amount in pennies
     @amount = 500
 
     # Create a customer using and email and card token
@@ -16,17 +16,17 @@ class ChargesController < ApplicationController
     )
 
     # Create a charge using the customer and amount
+    #   Description is optional
     charge = Stripe::Charge.create(
       :customer => customer.id,
       :amount => @amount,
-      # Description is optional
-      :description => 'Rails Stripe Customer example',
+      :description => 'Rails Stripe Customer',
       :currency => 'usd'
     )
 
-    # incase of invalid card or failed charge
+    # In case of invalid card or failed charge
   rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to charges_path
+    flash[:error] = e.message
+    redirect_to charges_path
   end
 end
